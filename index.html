@@ -1086,6 +1086,42 @@
         .testimonial-dot.active {
             background: #3498db;
         }
+
+          /* Effet hover pour les liens de navigation */
+        .hover-bg-primary:hover {
+            background-color: #0d6efd;
+            color: white !important;
+            transition: 0.3s;
+        }
+
+        /* Ombre et transition douce pour icônes sociales */
+        .social-icons a:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s;
+        }
+
+        /* Scroll de la sidebar si contenu trop long */
+        .sidebar {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+          
+    /* Effet apparition/disparition en boucle */
+  .pulse-fade {
+    animation: fadeInOut 4s ease-in-out infinite; /* 2s pour un cycle complet */
+  }
+
+   @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -1200,49 +1236,65 @@
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <img src="image/BE.jpeg" alt="Profile Picture" class="profile-pic">
+    <div class="sidebar p-4 shadow-lg rounded-3 bg-light d-flex flex-column align-items-center">
+        <!-- Photo de profil avec cercle et bordure -->
+        <img src="image/WhatsApp Image 2025-09-03 at 12.28.32.jpeg" 
+             alt="Profile Picture" 
+             class="profile-pic rounded-circle border border-3 border-primary mb-3" 
+             style="width:120px; height:120px; object-fit:cover;">
+
+        <!-- Nom -->
         <h3>KEDI BETCHEM</h3>
-        <div class="social-icons mt-3">
-            <a href="https://wa.me/237678152118" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://linkedin.com/in/oumarou-betchem-662526371" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/raphael-237" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-         <nav class="mt-8">
-            <a class="nav-link" href="#profile">
-                <i class="fas fa-user"></i>  A propos
+
+        <!-- Réseaux sociaux avec hover coloré -->
+      <div class="social-icons mt-3"> <a href="https://wa.me/237678152118" target="_blank"><i class="fab fa-whatsapp"></i></a> <a href="https://linkedin.com/in/oumarou-betchem-662526371" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/raphael-237" target="_blank"><i class="fab fa-github"></i></a> </div>
+
+        <!-- Menu de navigation moderne avec hover effet -->
+        <nav class="nav flex-column w-100">
+            <a href="#accueil" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-home me-2"></i> Accueil
             </a>
-            <a class="nav-link" href="#experiences">
-                <i class="fas fa-briefcase"></i>  Expériences
+            <a href="#profile" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-user me-2"></i> À propos
             </a>
-            <a class="nav-link" href="#projects">
-                <i class="fas fa-project-diagram"></i>  Projets
+            <a href="#experiences" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-briefcase me-2"></i> Expériences
             </a>
-            <a class="nav-link" href="#skills">
-                <i class="fas fa-tools"></i>  Compétences
+            <a href="#projects" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-project-diagram me-2"></i> Projets
             </a>
-            <a class="nav-link" href="#education">
-                <i class="fas fa-graduation-cap"></i>  Formation
+            <a href="#skills" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-tools me-2"></i> Compétences
             </a>
-            <a class="nav-link" href="#services">
-                <i class="fas fa-concierge-bell"></i>  Services
+            <a href="#education" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-graduation-cap me-2"></i> Formation
             </a>
-            <a class="nav-link" href="#partnership">
-                <i class="fas fa-handshake"></i>  Partenariat
+            <a href="#services" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-concierge-bell me-2"></i> Services
             </a>
-            <a class="nav-link" href="#testimonials">
-                <i class="fas fa-comment-dots"></i> Témoignages
+            <a href="#partnership" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-handshake me-2"></i> Partenariat
             </a>
-            <a class="nav-link" href="#contact">
-                <i class="fas fa-envelope"></i>  Contact
+            <a href="#testimonials" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-comment-dots me-2"></i> Témoignages
+            </a>
+            <a href="#contact" class="nav-link d-flex align-items-center py-2 px-3 rounded hover-bg-primary text-dark mb-1">
+                <i class="fas fa-envelope me-2"></i> Contact
             </a>
         </nav>
     </div>
 
     <div class="content">
-        <section class="hero-section">
-            <h1></h1>
-        </section>
+       <!-- SECTION ACCUEIL -->
+<section id="accueil" class="hero-section text-center d-flex flex-column justify-content-center align-items-center py-5">
+  <h1 class="mb-4 pulse-fade">Bienvenue sur mon Portfolio</h1>
+  
+  <!-- Bouton Télécharger CV -->
+  <a href="image/CV%20BETCHEM.pdf" download class="btn btn-primary btn-lg mt-3">
+    <i class="fas fa-download me-2"></i>Télécharger mon CV
+  </a>
+</section>
+
 
        <section id="profile" class="my-5">
             <h2 class="section-title">À propos de moi</h2>
@@ -1263,15 +1315,12 @@
                     
                     <div class="about-content">
                         <p class="about-paragraph">
-                            Technicien Supérieur en Génie Logiciel, avec une expérience de stage académique et professionnel axée sur le développement web et mobile. Compétences en <span class="about-highlight">HTML, CSS, PHP, JavaScript, Java, Laravel, React.js, Python</span>. Orienté résolution de problèmes, organisé et apte au travail en équipe. Passionné par le génie logiciel et désireux de contribuer au succès des entreprises.
-                        </p>
-                        
+                          Technicien Supérieur en Génie Logiciel et Développeur Full Stack Junior avec 3 ans d’expérience, spécialisé en React.js et Django. Fort d’une expérience académique et professionnelle en développement web et mobile, je maîtrise <span class="about-highlight">HTML, CSS, PHP, JavaScript, Java, Laravel, React.js, Python</span>.
                         <p class="about-paragraph">
-                            Travailleur indépendant et directeur de ma propre startup appelée <span class="about-highlight">BE CORP</span>, je suis un Développeur Full Stack Junior avec 3 ans d'expérience, spécialisé en React.js et Django. Passionné par l'innovation numérique, je conçois des solutions informatiques performantes. Manager Commercial de <span class="about-highlight">GLOBAL INCUBATOR SARL</span> et en partenariat avec d'autres structures, je vise à optimiser les compétences techniques et contribuer à des projets à fort impact.
+                           Organisé, orienté résolution de problèmes et apte au travail en équipe, je suis aussi fondateur de la startup <span class="about-highlight">BE CORP</span> et Manager Commercial chez <span class="about-highlight">GLOBAL INCUBATOR SARL</span>. Passionné par l’innovation numérique, je conçois des solutions performantes et m’engage dans des projets à fort impact.
                         </p>
                     </div>
-                    
-                    <div class="passions-section">
+                    <!-- <div class="passions-section">
                         <h4 class="passions-title"><i class="fas fa-heart"></i> Mes passions</h4>
                         <div class="passions-grid">
                             <div class="passion-item">
@@ -1299,7 +1348,8 @@
                                 <span class="passion-name">Voyages</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    
                 </div>
             </div>
         </section>
@@ -1319,7 +1369,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-header">
                                     <div>
-                                        <h4 class="timeline-title">Stage Professionnel Pré-Emploi - Hôpital Général de Yaoundé</h4>
+                                        <h4 class="timeline-title">Stage Professionnel - Hôpital Général de Yaoundé</h4>
                                     </div>
                                     <span class="timeline-period">Janvier 2025 - Présent</span>
                                 </div>
@@ -1556,67 +1606,102 @@
             </div>
         </section>
 
-        <section id="skills" class="my-5">
-            <h2 class="section-title">Compétences</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Langages & Frameworks</h4>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 90%;">90%</div></div><p>Python (Django)</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 85%;">85%</div></div><p>JavaScript (React.js)</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 70%;">70%</div></div><p>Angular (React.js)</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 50%;">50%</div></div><p>Python (Flask) </p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 40%;">40%</div></div><p>Java (Springboot) </p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 50%;">50%</div></div><p>PHP (Laravel) </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Développement Web & Mobile</h4>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 80%;">80%</div></div><p>API REST</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 85%;">85%</div></div><p>Frontend (React.js)</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 70%;">70%</div></div><p>Mobile (React Native)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Outils & Environnements</h4>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 90%;">90%</div></div><p>Git/GitHub</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 90%;">90%</div></div><p>VS Code/Postman</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 95%;">95%</div></div><p>Suite Office</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 40%;">40%</div></div><p>Windev</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Soft Skills</h4>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 95%;">95%</div></div><p>Esprit d’équipe</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 85%;">85%</div></div><p>Autonomie</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 80%;">80%</div></div><p>Adaptation</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 90%;">90%</div></div><p>Pédagogie</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4> Fabrication Produit d'entretien</h4>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 100%;">100%</div></div><p>Savon liquide</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 100%;">100%</div></div><p>Gel de douche</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 100%;">100%</div></div><p>Eau de javel</p>
-                            <div class="skill-bar"><div class="skill-fill" style="width: 100%;">100%</div></div><p>Savon de douche</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+       <section id="skills" class="my-5 py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">💡 Compétences</h2>
+    <p class="text-center text-muted mb-5">
+      Un aperçu de mes savoir-faire techniques et humains, acquis à travers mes expériences académiques, professionnelles et personnelles.
+    </p>
+    
+    <div class="row g-4">
+      
+      <!-- Langages & Frameworks -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card card-custom shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="mb-3 text-primary">Langages & Frameworks</h4>
+            <p><strong>Python (Django)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-primary" style="width: 90%;">90%</div></div>
+            
+            <p><strong>JavaScript (React.js)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-success" style="width: 85%;">85%</div></div>
+            
+            <p><strong>Angular</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-warning" style="width: 70%;">70%</div></div>
+            
+            <p><strong>Python (Flask)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-info" style="width: 50%;">50%</div></div>
+            
+            <p><strong>Java (Spring Boot)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-danger" style="width: 40%;">40%</div></div>
+            
+            <p><strong>PHP (Laravel)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-secondary" style="width: 50%;">50%</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Développement Web & Mobile -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card card-custom shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="mb-3 text-primary">Développement Web & Mobile</h4>
+            <p><strong>API REST</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-primary" style="width: 80%;">80%</div></div>
+            
+            <p><strong>Frontend (React.js)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-success" style="width: 85%;">85%</div></div>
+            
+            <p><strong>Mobile (React Native)</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-warning" style="width: 70%;">70%</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Outils & Environnements -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card card-custom shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="mb-3 text-primary">Outils & Environnements</h4>
+            <p><strong>Git / GitHub</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-primary" style="width: 90%;">90%</div></div>
+            
+            <p><strong>VS Code / Postman</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-success" style="width: 90%;">90%</div></div>
+            
+            <p><strong>Suite Office</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-warning" style="width: 95%;">95%</div></div>
+            
+            <p><strong>Windev</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-danger" style="width: 40%;">40%</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Soft Skills -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card card-custom shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="mb-3 text-primary">Soft Skills</h4>
+            <p><strong>Esprit d’équipe</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-primary" style="width: 95%;">95%</div></div>
+            
+            <p><strong>Autonomie</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-success" style="width: 85%;">85%</div></div>
+            
+            <p><strong>Adaptation</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-warning" style="width: 80%;">80%</div></div>
+            
+            <p><strong>Pédagogie</strong></p>
+            <div class="skill-bar"><div class="skill-fill bg-info" style="width: 90%;">90%</div></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 
         <section id="education" class="my-5">
             <h2 class="section-title">Parcours Scolaire</h2>
@@ -1629,28 +1714,47 @@
                     
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-year">2024</div>
-                            <div class="timeline-content">
-                                <div class="timeline-diploma">Brevet de Technicien Supérieur</div>
-                                <p class="mb-0">Spécialité Génie Logiciel</p>
-                            </div>
-                        </div>
+  <div class="timeline-year">2023 - 2024</div>
+  <div class="timeline-content">
+    <div class="timeline-diploma">Brevet de Technicien Supérieur</div>
+    <p class="mb-0">Spécialité : Gestion des Systèmes d’Information</p>
+    <p>
+      Cette formation m’a permis de développer une solide expertise en analyse, conception et gestion des systèmes informatisés.
+      J’y ai acquis des compétences en bases de données, programmation, réseaux et gestion de projets, me préparant à répondre
+      aux besoins numériques des entreprises. Elle a aussi renforcé mon sens de l’organisation, ma capacité d’analyse et mon
+      aptitude à collaborer en équipe sur des projets concrets.
+    </p>
+  </div>
+</div>
                         
-                        <div class="timeline-item">
-                            <div class="timeline-year">2022</div>
-                            <div class="timeline-content">
-                                <div class="timeline-diploma">Baccalauréat D</div>
-                                <p class="mb-0">Option Scientifique</p>
-                            </div>
-                        </div>
+                       <div class="timeline-item">
+  <div class="timeline-year">2021 - 2022</div>
+  <div class="timeline-content">
+    <div class="timeline-diploma">Baccalauréat D</div>
+    <p class="mb-0">Option Scientifique</p>
+    <p>
+      Cette formation a développé ma rigueur analytique et mon esprit critique grâce aux mathématiques, à la physique
+      et aux sciences naturelles. Elle a posé les bases de ma réflexion logique et de ma capacité à résoudre des
+      problèmes complexes, compétences qui me servent aujourd’hui dans le domaine du génie logiciel et des systèmes
+      d’information.
+    </p>
+  </div>
+</div>
+
                         
-                        <div class="timeline-item">
-                            <div class="timeline-year">2021</div>
-                            <div class="timeline-content">
-                                <div class="timeline-diploma">Probatoire</div>
-                                <p class="mb-0">Série D</p>
-                            </div>
-                        </div>
+                       <div class="timeline-item">
+  <div class="timeline-year">2020 - 2021</div>
+  <div class="timeline-content">
+    <div class="timeline-diploma">Probatoire</div>
+    <p class="mb-0">Série D</p>
+    <p>
+      Étape charnière de mon parcours scientifique, ce diplôme a consolidé mes acquis en mathématiques, physique et sciences naturelles.
+      Il a renforcé ma discipline de travail et ma capacité à aborder les problématiques complexes, préparant ainsi le terrain
+      pour la réussite au Baccalauréat et mes futures études supérieures.
+    </p>
+  </div>
+</div>
+
                     </div>
                     
                     <h4 class="section-subtitle"><i class="fas fa-language"></i> Langues</h4>
@@ -1683,8 +1787,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <h4 class="section-subtitle"><i class="fas fa-icons"></i> Activités Parallèles</h4>
+                    <!-- <h4 class="section-subtitle"><i class="fas fa-icons"></i> Activités Parallèles</h4>
                     <div class="activities-grid">
                         <div class="activity-card">
                             <div class="activity-icon">
@@ -1717,62 +1820,80 @@
                             <h5 class="activity-name">Peintre Décorateur</h5>
                             <p class="activity-desc">Décoration d'intérieur et peinture</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="my-5">
-            <h2 class="section-title">Services BE CORP</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Développement Web</h4>
-                            <p>Création de sites et applications web sur mesure.</p>
-                            <img src="image/web-dev.jpg" alt="Web Development" class="gallery-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Maintenance Logiciel & Matériel</h4>
-                            <p>Support et entretien du Matériel et des systèmes informatiques.</p>
-                            <img src="image/m.jpg" alt="Maintenance" class="gallery-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Administration Réseau</h4>
-                            <p>Gestion et optimisation des réseaux informatiques.</p>
-                            <img src="image/R.jfif" alt="Network Admin" class="gallery-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Solutions Informatiques Complètes</h4>
-                            <p>Couverture complète des besoins informatiques pour entreprises et particuliers.</p>
-                            <img src="image/OIP.webp" alt="IT Solutions" class="gallery-img">
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4>Décoration mural et enduit Mural</h4>
-                            <p>Faite de vos intérieur le cadre de vie parfait pour vos enfants et vous</p>
-                            <img src="image/nm.jpg" alt="IT Solutions" class="gallery-img">
-                        </div>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>
         </section>
+
+        <section id="services" class="my-5 py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-4"> Nos Services chez <span class="text-primary">BE CORP</span></h2>
+    <p class="text-center text-muted mb-5">
+      Nous vous accompagnons avec des solutions innovantes et adaptées pour booster vos projets numériques et améliorer votre cadre de vie.
+    </p>
+    
+    <div class="row g-4">
+      
+      <!-- Développement Web -->
+      <div class="col-md-4">
+        <div class="card card-custom shadow-sm h-100 text-center">
+          <img src="image/web-dev.jpg" alt="Développement Web" class="card-img-top gallery-img">
+          <div class="card-body">
+            <h4 class="card-title">Développement Web</h4>
+            <p class="card-text">Création de sites et applications web modernes, performants et sur mesure pour particuliers et entreprises.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Maintenance Logiciel & Matériel -->
+      <div class="col-md-4">
+        <div class="card card-custom shadow-sm h-100 text-center">
+          <img src="image/m.jpg" alt="Maintenance" class="card-img-top gallery-img">
+          <div class="card-body">
+            <h4 class="card-title">Maintenance Logiciel & Matériel</h4>
+            <p class="card-text">Assistance technique, entretien et optimisation de vos équipements et systèmes informatiques.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Administration Réseau -->
+      <div class="col-md-4">
+        <div class="card card-custom shadow-sm h-100 text-center">
+          <img src="image/R.jfif" alt="Administration Réseau" class="card-img-top gallery-img">
+          <div class="card-body">
+            <h4 class="card-title">Administration Réseau</h4>
+            <p class="card-text">Mise en place, gestion et sécurisation de réseaux informatiques fiables et performants.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Solutions Informatiques -->
+      <div class="col-md-4">
+        <div class="card card-custom shadow-sm h-100 text-center">
+          <img src="image/OIP.webp" alt="Solutions IT" class="card-img-top gallery-img">
+          <div class="card-body">
+            <h4 class="card-title">Solutions Informatiques Complètes</h4>
+            <p class="card-text">Une couverture globale pour répondre à tous vos besoins technologiques, du conseil à l’intégration.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Décoration -->
+      <div class="col-md-4">
+        <div class="card card-custom shadow-sm h-100 text-center">
+          <img src="image/nm.jpg" alt="Décoration Mural" class="card-img-top gallery-img">
+          <div class="card-body">
+            <h4 class="card-title">Décoration Murale & Enduit</h4>
+            <p class="card-text">Sublimez vos intérieurs et créez un espace de vie chaleureux et inspirant pour vous et vos proches.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 
        <section id="partnership" class="my-5">
             <h2 class="section-title">Partenariats Stratégiques</h2>
@@ -1909,7 +2030,7 @@
                         <!-- Témoignage 1 -->
                         <div class="testimonial-slide active">
                             <div class="testimonial-bubble">
-                                <p class="testimonial-text">Le travail de BETCHEM sur notre système de gestion hospitalière a transformé notre efficacité. Très professionnel et innovant!</p>
+                                <p class="testimonial-text">Le travail de BE CORP sur notre système de gestion hospitalière a transformé notre efficacité. Très professionnel et innovant!</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="https://placehold.co/100x100/3498db/white?text=J.E" alt="M. EKOUA Janvion" class="testimonial-img">
@@ -1921,7 +2042,7 @@
                         <!-- Témoignage 2 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-bubble">
-                                <p class="testimonial-text">Son expertise en développement web a permis un site institutionnel performant et moderne. Un vrai talent!</p>
+                                <p class="testimonial-text">son expertise en développement web a permis un site institutionnel performant et moderne. Un vrai talent!</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="https://placehold.co/100x100/2c3e50/white?text=M.T" alt="M. TOUMECK Martin" class="testimonial-img">
@@ -1933,7 +2054,7 @@
                         <!-- Témoignage 3 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-bubble">
-                                <p class="testimonial-text">BETCHEM a su comprendre nos besoins spécifiques et proposer des solutions adaptées. Collaboration excellente et résultats au-delà de nos attentes.</p>
+                                <p class="testimonial-text">BE CORP a su comprendre nos besoins spécifiques et proposer des solutions adaptées. Collaboration excellente et résultats au-delà de nos attentes.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="https://placehold.co/100x100/3498db/white?text=F.P" alt="M. Francis PORIO" class="testimonial-img">
@@ -1945,7 +2066,7 @@
                         <!-- Témoignage 4 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-bubble">
-                                <p class="testimonial-text">Le professionnalisme et la créativité de BETCHEM ont grandement contribué au succès de notre projet digital. Je recommande vivement ses services.</p>
+                                <p class="testimonial-text">Le professionnalisme et la créativité de BE CORP ont grandement contribué au succès de notre projet digital. Je recommande vivement ses services.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="https://placehold.co/100x100/2c3e50/white?text=L.L" alt="M. Leopold LEUNDJI" class="testimonial-img">
@@ -1957,7 +2078,7 @@
                         <!-- Témoignage 5 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-bubble">
-                                <p class="testimonial-text">Une expertise rare alliée à un sens aigu du relationnel. BETCHEM a su mener à bien notre projet complexe dans les délais et avec un résultat exceptionnel.</p>
+                                <p class="testimonial-text">Une expertise rare alliée à un sens aigu du relationnel. BE CORP a su mener à bien notre projet complexe dans les délais et avec un résultat exceptionnel.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="https://placehold.co/100x100/3498db/white?text=L.S" alt="M. Ludovic SAKAM" class="testimonial-img">
@@ -1979,76 +2100,89 @@
             </div>
         </section>
 
-         <section id="contact" class="my-5">
-            <div class="contact-header">
-                <i class="fas fa-envelope-open-text contact-icon"></i>
-                <h2 class="section-title">Contactez-moi</h2>
-                <p class="text-muted">N'hésitez pas à me contacter pour toute question ou collaboration</p>
+       <section id="contact" class="my-5">
+  <div class="contact-header text-center mb-4">
+    <i class="fas fa-envelope-open-text contact-icon"></i>
+    <h2 class="section-title">Contactez-nous</h2>
+    <p class="text-muted">N'hésitez pas à nous contacter pour toute question ou collaboration</p>
+  </div>
+  
+  <div class="row g-4">
+    <!-- Coordonnées -->
+    <div class="col-md-4">
+      <div class="card card-custom h-100 shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title mb-4"><i class="fas fa-info-circle me-2"></i>Nos coordonnées</h4>
+          <ul class="list-unstyled contact-info">
+            <li>
+              <i class="fas fa-envelope"></i>
+              <strong>Email : </strong> 
+              <a href="mailto:betchemoumarou@gmail.com">betchemoumarou@gmail.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <strong>Téléphone :</strong> 
+              +237 678 15 21 18 / 659 27 58 26
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <strong>Adresse :</strong> 
+              Yaoundé - Cameroun
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Formulaire -->
+    <div class="col-md-4">
+      <div class="card card-custom h-100 shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title mb-4"><i class="fas fa-paper-plane me-2"></i>Envoyer un message</h4>
+          <!-- Status Messages -->
+          <div id="form-status" class="alert alert-success d-none" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            <span id="status-message"></span>
+          </div>
+          
+          <form id="contact-form" action="https://formspree.io/f/xpwjozjb" method="POST" class="contact-form">
+            <div class="form-group mb-3">
+              <input type="text" name="name" class="form-control" placeholder="Votre nom complet" required>
             </div>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h4 class="card-title mb-4"><i class="fas fa-info-circle me-2"></i>Mes coordonnées</h4>
-                            <ul class="list-unstyled contact-info">
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <strong>Email :</strong> 
-                                    <a href="mailto:betchemoumarou@gmail.com">betchemoumarou@gmail.com</a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-phone"></i>
-                                    <strong>Téléphone :</strong> 
-                                    +237 678 15 21 18 / 659 27 58 26
-                                </li>
-                
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <strong>Adresse :</strong> 
-                                    Yaoundé - Cameroun
-                                </li>
-                            </ul>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h4 class="card-title mb-4"><i class="fas fa-paper-plane me-2"></i>Envoyer un message</h4>
-                             <!-- Status Messages -->
-                        <div id="form-status" class="alert alert-success" role="alert">
-                            <i class="fas fa-check-circle me-2"></i>
-                            <span id="status-message"></span>
-                        </div>
-                           <form id="contact-form" action="https://formspree.io/f/xpwjozjb" method="POST" class="contact-form">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Votre nom complet" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Votre adresse email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="subject" class="form-control" placeholder="Sujet du message">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" class="form-control" rows="5" placeholder="Votre message..." required></textarea>
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="not-robot" required>
-                                <label class="form-check-label" for="not-robot">Je ne suis pas un robot</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100 mt-3">
-                                <i class="fas fa-paper-plane me-2"></i>Envoyer le message
-                            </button>
-                        </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Votre adresse email" required>
             </div>
-        </section>
+            <div class="form-group mb-3">
+              <input type="text" name="subject" class="form-control" placeholder="Sujet du message">
+            </div>
+            <div class="form-group mb-3">
+              <textarea name="message" class="form-control" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <div class="form-group form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="not-robot" required>
+              <label class="form-check-label" for="not-robot">Je ne suis pas un robot</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-2">
+              <i class="fas fa-paper-plane me-2"></i>Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Carte Google Map -->
+    <div class="col-md-4">
+      <div class="card card-custom h-100 shadow-sm">
+        <div class="card-body p-0">
+          <h4 class="card-title p-3 mb-0"><i class="fas fa-map me-2"></i>Localisation</h4>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.505409568623!2d11.528351874129413!3d3.915509696058248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bc77823442527%3A0x265b89def464879a!2sSanta%20Barbara!5e0!3m2!1sfr!2scm!4v1756970988287!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
     </div>
 
     <footer>
